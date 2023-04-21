@@ -5,6 +5,7 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,7 @@ import java.util.Optional;
 // 이렇게 등록된 빈은 다른 빈에서 주입(Dependency Injection)하여 사용할 수 있습니다.
 
 //@Service
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
