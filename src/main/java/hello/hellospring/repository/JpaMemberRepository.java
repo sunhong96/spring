@@ -43,4 +43,12 @@ public class JpaMemberRepository implements MemberRepository{
     public List<Member> findAll() {
         return em.createQuery("select m from Member m", Member.class).getResultList();
     }
+    //이 쿼리는 "Member" 엔티티 객체를 대상으로 모든 데이터를 조회하도록 작성된 것입니다.
+    // "m"은 엔티티 객체에 대한 별칭(alias)으로 사용됩니다.
+
+    //JPA에서는 앤티티 객체를 사용하여 데이터베이스에 접근하고 관리합니다.
+    // 앤티티 객체는 데이터베이스의 테이블과 매핑되는 클래스로,
+    // 애플리케이션에서 사용되는 도메인 객체입니다.
+    // 애플리케이션에서는 앤티티 객체를 생성하고,
+    // JPA는 이를 데이터베이스의 레코드와 매핑하여 저장하거나 조회합니다.
 }

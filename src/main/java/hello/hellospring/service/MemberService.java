@@ -15,7 +15,7 @@ import java.util.Optional;
 // 이렇게 등록된 빈은 다른 빈에서 주입(Dependency Injection)하여 사용할 수 있습니다.
 
 //@Service
-@Transactional
+@Transactional  // jpa쓸때는 써줘야댐
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -28,9 +28,9 @@ public class MemberService {
     //회원가입
     public Long join(Member member) {
 
-        validateDuplicateMember(member); // 중복회원검증
-        memberRepository.save(member);
-        return member.getId();
+            validateDuplicateMember(member); // 중복 회원 검증
+            memberRepository.save(member);
+            return member.getId();
     }
 
     private void validateDuplicateMember(Member member) {
@@ -41,8 +41,8 @@ public class MemberService {
     }
 
     //전체 회원 조회
-    public List<Member> findMembers(){
-        return memberRepository.findAll();
+    public List<Member> findMembers() {
+            return memberRepository.findAll();
     }
 
     public Optional<Member> findOne(Long memberId){
